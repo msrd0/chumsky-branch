@@ -1,0 +1,11 @@
+[package]
+name = "chumsky-branch"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+description = "branch combinator for the chumsky parsing library"
+repository = "https://github.com/msrd0/chumsky-branch"
+
+[dependencies]
+chumsky = "0.8"
