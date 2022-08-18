@@ -2,7 +2,21 @@
 #![warn(rust_2018_idioms, unreachable_pub)]
 #![forbid(elided_lifetimes_in_paths, unsafe_code)]
 
-//! branch combinator for the [chumsky parsing library](chumsky).
+//! This crate defines three parsing combinators for the [chumsky parsing library](chumsky):
+//! 
+//!  - [`not_starting_with`]: This combinator takes a list of patterns, and
+//!    matches the shortest string from the input that diverges from all
+//!    patterns.
+//!  - [`not_containing`]: This combinator takes a list of patterns, and
+//!    any string that does not contain any of the patterns.
+//!  - [`branch`]: This combinator allows branching into a parser. Each
+//!    branch defines two parsers. When the first parser matches, it
+//!    chooses that branch and that branch only, even if the second parser
+//!    fails. The second parser is then used to produce the output type.
+//!    You can combine as many branches as you want (similar to `if else`).
+//!    Then, you have to define an else branch which just takes a `String`
+//!    and needs to produce output from that. Useful if you want to parse
+//!    verbatim input plus some syntax.
 //!
 //! # Example
 //!
