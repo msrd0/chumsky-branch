@@ -1,11 +1,13 @@
 [package]
 name = "chumsky-branch"
-version = "0.0.0"
+version = "0.1.0"
 edition = "2021"
-publish = false
+license = "MIT"
 
 description = "branch combinator for the chumsky parsing library"
 repository = "https://github.com/msrd0/chumsky-branch"
+readme = "README.md"
+include = ["/src/**/*.rs", "/LICENSE", "/README.md"]
 
 [dependencies]
 chumsky = "0.8"
