@@ -3,7 +3,7 @@
 #![forbid(elided_lifetimes_in_paths, unsafe_code)]
 
 //! This crate defines three parsing combinators for the [chumsky parsing library](chumsky):
-//! 
+//!
 //!  - [`not_starting_with`]: This combinator takes a list of patterns, and
 //!    matches the shortest string from the input that diverges from all
 //!    patterns.

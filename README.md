@@ -51,8 +51,8 @@ assert_eq!(&lexer().parse(input).unwrap(), &[
 ```
 
 
- [__cargo_doc2readme_dependencies_info]: ggGkYW0AYXSEG_yB7JfhovBLGygsATPTD76BG2F5aYNOA7k2G-77ogSBRovuYXKEG_ojqDs4RFzeG5AY-iY45EvCG3W9C5VbCNUrG6ZVVP55P6sGYWSCgmdjaHVtc2t5ZTAuOC4wg25jaHVtc2t5LWJyYW5jaGUwLjEuMW5jaHVtc2t5X2JyYW5jaA
+ [__cargo_doc2readme_dependencies_info]: ggGkYW0BYXSEG7MOjWjyca3kGxf6diRFWxn3G6RH0wpyIcu_GyTcEMziVat3YXKEG-yeFpzUzlj2G7Ik4mJOJ0dwG-BzvwA7IfdVGwapmzSHIYoEYWSCgmdjaHVtc2t5ZTAuOC4wg25jaHVtc2t5LWJyYW5jaGUwLjEuMW5jaHVtc2t5X2JyYW5jaA
  [__link0]: https://crates.io/crates/chumsky/0.8.0
- [__link1]: https://docs.rs/chumsky-branch/0.1.1/chumsky_branch/?search=chumsky_branch::not_starting_with
- [__link2]: https://docs.rs/chumsky-branch/0.1.1/chumsky_branch/?search=chumsky_branch::not_containing
- [__link3]: https://docs.rs/chumsky-branch/0.1.1/chumsky_branch/?search=chumsky_branch::branch
+ [__link1]: https://docs.rs/chumsky-branch/0.1.1/chumsky_branch/?search=not_starting_with
+ [__link2]: https://docs.rs/chumsky-branch/0.1.1/chumsky_branch/?search=not_containing
+ [__link3]: https://docs.rs/chumsky-branch/0.1.1/chumsky_branch/?search=branch
