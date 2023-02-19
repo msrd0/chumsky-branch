@@ -1,0 +1,55 @@
+name: Rust
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        rust:
+          - name: Stable
+            toolchain: stable
+            nightly: false
+          - name: Nightly
+            toolchain: nightly
+            nightly: true
+    runs-on: ubuntu-latest
+    name: Test on Rust ${{matrix.rust.name}}
+    continue-on-error: ${{matrix.rust.nightly}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{matrix.rust.toolchain}}
+        id: rust-toolchain
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/git
+            ~/.cargo/registry
+            target
+          key: "${{runner.os}} Rust ${{steps.rust-toolchain.outputs.cachekey}}"
+      - run: cargo test
+  
+  rustfmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: rustfmt
+      - run: cargo fmt --all -- --check
+  
+  readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: docker://ghcr.io/msrd0/cargo-doc2readme
+        with:
+          entrypoint: ./readme.sh
+          args: --check
