@@ -22,7 +22,7 @@ jobs:
     name: Test on Rust ${{matrix.rust.name}}
     continue-on-error: ${{matrix.rust.nightly}}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{matrix.rust.toolchain}}
@@ -39,7 +39,7 @@ jobs:
   rustfmt:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@nightly
         with:
           components: rustfmt
@@ -48,7 +48,7 @@ jobs:
   readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: docker://ghcr.io/msrd0/cargo-doc2readme
         with:
           entrypoint: cargo
